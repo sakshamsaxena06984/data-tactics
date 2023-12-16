@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,6 +20,9 @@ import example.com.tactics.helper.Message;
 
 @Controller
 public class HomeControllers {
+	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private UserRespository userRespository;
@@ -60,8 +64,9 @@ public class HomeControllers {
 		
 		return "signup";
 	}
+
 	
-	//register handler
+	//register page mapping
 	
 	@PostMapping("/do_register")
 	public String registerUser(@Valid @ModelAttribute("user") User user,
@@ -89,6 +94,7 @@ public class HomeControllers {
 			
 			user.setrole("ROLE_USER");
 			user.setEnabled(true);
+			user.setPassword(passwordEncoder.encode(user.getPassword()));
 			user.setImageUrl("default.png");
 			
 			User result1 = this.userRespository.save(user);
@@ -110,6 +116,22 @@ public class HomeControllers {
 		return "signup";
 	}
 	
+	// login page mapping
+		@GetMapping("/signin")
+		public String customLogin(Model model) {
+			model.addAttribute("title", "Login");
+			System.out.println("++++++++++++++++++++++++++++++++ SIGNIN");
+			return "login";
+		}
+	
+	
+	/*
+	 * @PostMapping("/signin") public String
+	 * customSignin(@ModelAttribute("username") String u,@ModelAttribute("password")
+	 * String p) { // model.addAttribute("title", "Login");
+	 * System.out.println("++++++++++++++++  signing page!  "+" - "+u+"  -p-  "+p);
+	 * return "login"; }
+	 */
 
 
 }
