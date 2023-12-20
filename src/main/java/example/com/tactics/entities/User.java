@@ -24,7 +24,10 @@ public class User {
 	private boolean enabled;
 	private String imageUrl;
 	private String about;
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
+	/*
+	 * orphanRemoval = true | mean, if child entity remove from parent entity then it will automatically remove
+	 */
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user",orphanRemoval = true)
 	private List<Contact> contacts=new ArrayList<>();
 	public User() {
 		super();
