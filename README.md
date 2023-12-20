@@ -3,6 +3,9 @@
 
 DataTactics application is based on MVC model, where you can store your records in section with lots of features.
 
+Most typically, they’re organised in order of priority. Traditionally, they’re written on a piece of paper or post it notes and act as a memory aid. As technology has evolved we have been able to create a ontes with excel spreadsheets, word documents, email lists, todo list apps, Microsoft to do and google name a few. 
+You can use a DataTactics in your home and personal life, or in the workplace.
+
 
 
 ## Features
