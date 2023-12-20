@@ -19,15 +19,6 @@ You can use a DataTactics in your home and personal life, or in the workplace.
 - Password encryption etc..
 
 
-
-## Installation
-
-Install my-project with npm
-
-```bash
-  cd datatactics
-  mvn clean install
-```
     
 ## Tech Stack
 
