@@ -17,6 +17,7 @@ You can use a DataTactics in your home and personal life, or in the workplace.
 - Adding new connection section.
 - Pagination.
 - Password encryption etc..
+- Search box.
 
 
     
@@ -24,7 +25,7 @@ You can use a DataTactics in your home and personal life, or in the workplace.
 
 **Client:** Html, CSS, Javascript, Bootstrap
 
-**Server:** SpringBoot , JPARepository ,RestFull API etc 
+**Server:** SpringBoot , JPARepository ,RestFull API, SpringBoot ORM etc 
 
 **Template engine:** Thymeleaf
 
