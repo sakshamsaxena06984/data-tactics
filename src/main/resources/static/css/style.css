@@ -103,3 +103,17 @@ body {
 	object-fit:cover;
 	border-radius:50%;
 }
+
+/* it is the search-result style */
+
+.search-container{
+	position: relative;
+}
+.search-result{
+	position: absolute;
+	background:white;
+	padding:10px;
+	width:100%;
+	border: 1px solid gray;
+	display: none;
+}

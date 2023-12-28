@@ -1,6 +1,7 @@
 package example.com.tactics.dao;
 
 import example.com.tactics.entities.Contact;
+import example.com.tactics.entities.User;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,7 +23,10 @@ public interface ContactRepository extends JpaRepository<Contact, Integer> {
     
 	@Query("from Contact as d where d.user.id =:userId")
 	public Page<Contact> findContactsByUser(@Param("userId") int userId,Pageable pageable);
-
+	
+	
+	// search query result
+	public List<Contact> findByNameContainingAndUser(String name,User user);
 
 
 }
